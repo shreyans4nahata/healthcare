@@ -8,7 +8,7 @@ var UserSchema = new mongoose.Schema({
     age:Number
 });
 
-module.exports = mongoose.model('User',UserSchema);
+mongoose.model('User',UserSchema,'User');
 
 
 
