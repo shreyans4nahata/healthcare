@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var UserSchema = new mongoose.Schema({
+var User1Schema = new mongoose.Schema({
     _id:{type:String},
     username:String,
     email:String,
@@ -8,7 +8,7 @@ var UserSchema = new mongoose.Schema({
     age:Number
 });
 
-mongoose.model('User',UserSchema,'User');
+mongoose.model('User1',User1Schema,'User1');
 
 
 

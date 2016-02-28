@@ -7,13 +7,14 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var signup = require('./routes/signup');
 var mongoose = require('mongoose');
 var app = express();
 
 
 app.set('MongodbHost','127.0.0.1');
 app.set('MongodbPort','27017');
-mongoose.connect('mongodb://' + app.get('MongodbHost') + ':' + app.get('MongodbPort') + '/HealthCare');
+mongoose.connect('mongodb://' + app.get('MongodbHost') + ':' + app.get('MongodbPort') + '/User1');
 require('./models/Users');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/signup',signup);  
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
